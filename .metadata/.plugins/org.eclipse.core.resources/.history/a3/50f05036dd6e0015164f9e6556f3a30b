@@ -5,20 +5,8 @@ public class Input {
 	
 private ArrayList<Double> input = new ArrayList<Double>();
 
-/**
- * A constructor that takes a single number.
- * @param d The number to initialize the ArrayList.
- */
-public Input(double d){
+public void Input(double d){
 	this.input.add(d);
-}
-
-/**
- * A constructor that takes an ArrayList.
- * @param input The ArrayList to initialize input.
- */
-public Input(ArrayList<Double> input){
-	this.input = input;
 }
 
 /**
