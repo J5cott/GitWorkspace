@@ -1,0 +1,46 @@
+package model;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JEditorPane;
+
+
+public class View extends JPanel{
+
+	private JButton zero, one, two, three, four, five, six, 
+	seven, eight, nine, add, subtract, enter;
+	private JEditorPane result;
+	
+	/**
+	 * Construct a new View
+	 */
+	public View(){
+		result = new JEditorPane();
+		result.setText("0");
+		result.setEditable(false);
+		result.setSize(300, 25);
+		
+		JPanel j = new JPanel();
+		
+		j.setLayout(new BorderLayout());
+		j.add(result, BorderLayout.NORTH);
+		
+		JPanel buttonPanel = new JPanel();
+		zero = new JButton("0");
+		one = new JButton("1");
+		two = new JButton("2");
+		three = new JButton("3");
+		four = new JButton("4");
+		five = new JButton("5");
+		six = new JButton("6");
+		seven = new JButton("7");
+		eight = new JButton("8");
+		nine = new JButton("9");
+		
+		
+		
+	}
+	
+}
