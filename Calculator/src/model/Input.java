@@ -12,11 +12,11 @@ private double lastnumber;
 			while(math.isEmpty() == false){
 				String var1 = math.pop();
 			
-				if(var1 == "+"){					
+				if(var1.matches("\\D+")){					
 					if (math.isEmpty() == false ) {
 						String var2 = math.pop();
 						double input2 = Double.parseDouble(var2);
-						lastnumber = BasicAlgebra.add(lastnumber, input2);
+						lastnumber = algebraCaller(lastnumber,var1,input2);
 					}
 					else{
 						return Double.toString(lastnumber);
@@ -25,19 +25,11 @@ private double lastnumber;
 				}
 				else{
 					
-					double input1 = Double.parseDouble(var1);
+					double input2 = Double.parseDouble(var1);
 					String function = math.pop();
-					double input2 = Double.parseDouble(math.pop());
+					double input1 = Double.parseDouble(math.pop());
 					
-					switch(function){
-						
-						case("+"):
-							lastnumber = lastnumber + BasicAlgebra.add(input1,input2);
-							break;
-						case("-"):
-							lastnumber = lastnumber + BasicAlgebra.substract(input1,input2);
-								
-					}
+					lastnumber = lastnumber + algebraCaller(input1,function,input2);
 					
 				}
 			
@@ -55,6 +47,25 @@ private double lastnumber;
 				
 		}	
 	}
+	
+	private double algebraCaller(double input1,String function, double input2){
+		
+		Double var = null;
+		
+		switch(function){
+		
+		case("+"):
+			var = BasicAlgebra.add(input1,input2);
+			break;
+		case("-"):
+			var = BasicAlgebra.substract(input1,input2);
+			break;
+		}
+		return var;
+		
+	}
+	
+	
 	
 	public void clear(){
 		lastnumber = 0;

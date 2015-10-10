@@ -12,8 +12,17 @@ public static double add(double input1, double input2){
 
 
 public static double substract(double input1,double input2){
-	return input1 + input2;
+	return input1 - input2;
 }
+
+
+public static double multiply(double input1,double input2){
+	return input1 * input2;
+}
+
+
+
+
 
 
 }
