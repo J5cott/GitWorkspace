@@ -293,8 +293,9 @@ public class View extends JPanel{
 		button.setText("Press me");
 		
 		frame.add(new View());
-		frame.setSize(300, 300);
+		frame.setSize(400, 200);
 		frame.setLocationRelativeTo(null);
+		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 			

@@ -1,0 +1,27 @@
+<jwrapper>
+<BuildOutputFolder>C:\Users\Justin\Documents\GitHub\GitWorkspace\Calculator\JWrapperBuild</BuildOutputFolder>
+<BundleName>Calculator</BundleName>
+<SplashPNG>C:\Users\Justin\AppData\Roaming\JWrapper-JWrapperApp\JWrapper-JWrapperApp-00037895576-complete\resources\jwlogo256.png</SplashPNG>
+<BundleLogoPNG>C:\Users\Justin\AppData\Roaming\JWrapper-JWrapperApp\JWrapper-JWrapperApp-00037895576-complete\resources\jwlogo256.png</BundleLogoPNG>
+<InstallType>CurrentUser</InstallType>
+<App>
+  <Name>Calculator</Name>
+  <LogoPNG>C:\Users\Justin\AppData\Roaming\JWrapper-JWrapperApp\JWrapper-JWrapperApp-00037895576-complete\resources\jwlogo256.png</LogoPNG>
+  <MainClass>View</MainClass>
+</App>
+<SupportedLanguages>en</SupportedLanguages>
+<Windows32JRE>C:\Users\Justin\Documents\GitHub\GitWorkspace\Calculator\jwrapperJREs\win32\jre1.8.0_60</Windows32JRE>
+<Windows64JRE>C:\Users\Justin\Documents\GitHub\GitWorkspace\Calculator\jwrapperJREs\win32\jre1.8.0_60</Windows64JRE>
+<Linux32JRE>C:\Users\Justin\Documents\GitHub\GitWorkspace\Calculator\jwrapperJREs\linux\jre1.8.0_60</Linux32JRE>
+<Linux64JRE>C:\Users\Justin\Documents\GitHub\GitWorkspace\Calculator\jwrapperJREs\linuxx64\jre1.8.0_60</Linux64JRE>
+<Mac64JRE>C:\Users\Justin\Documents\GitHub\GitWorkspace\Calculator\jwrapperJREs\macos64\jre1.8.0_60.jre</Mac64JRE>
+<WindowsElevation>None</WindowsElevation>
+<WindowsElevationUiAccess>true</WindowsElevationUiAccess>
+<File classpath='yes'>C:\Users\Justin\Desktop\Calculator.jar</File>
+<JvmOptions>
+<JvmOption>-Xmx256m</JvmOption>
+</JvmOptions>
+<!-- IMPORTANT place custom content BELOW this comment for compatibility with JW App -->
+
+
+</jwrapper>
