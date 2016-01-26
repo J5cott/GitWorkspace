@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class InputTest {
-	private Input in;
+	private Input1 in;
 	
 	
 	private Stack<String> math2plus = new Stack<String>();
@@ -45,36 +45,36 @@ public class InputTest {
 	}
 
 	@Test
-	public void testCalucate2inputs() {
+	public void testcalculate2inputs() {
 		
 		
-		in = new Input();
+		in = new Input1();
 		Stack<String> testStack = math2plus2;
 		
 		double testdouble = 4;
 		String testString = Double.toString(testdouble);
 		
-		assertEquals(testString,in.calucate(testStack));
+		assertEquals(testString,in.calculate(testStack));
 		
-		in = new Input();
+		in = new Input1();
 		testStack = math4minus2;
 		
 		testdouble = 2;
 		testString = Double.toString(testdouble);
 		
-		assertEquals(testString,in.calucate(testStack));
+		assertEquals(testString,in.calculate(testStack));
 		
 	}
 	@Test
-	public void testCalucate2inputsWithClear(){
+	public void testcalculate2inputsWithClear(){
 		
-		in = new Input();
+		in = new Input1();
 		Stack<String> testStack = math2plus2;
 		
 		double testdouble = 4;
 		String testString = Double.toString(testdouble);
 		
-		assertEquals(testString,in.calucate(testStack));
+		assertEquals(testString,in.calculate(testStack));
 		
 		in.clear();
 		
@@ -83,48 +83,48 @@ public class InputTest {
 		testdouble = 2;
 		testString = Double.toString(testdouble);
 		
-		assertEquals(testString,in.calucate(testStack));
+		assertEquals(testString,in.calculate(testStack));
 		
 	}
 	
 	@Test
-	public void testCalucate2inputThen1input(){
+	public void testcalculate2inputThen1input(){
 		
-		in = new Input();
+		in = new Input1();
 		Stack<String> testStack = math2plus2;
 		
 		double testdouble = 4;
 		String testString = Double.toString(testdouble);
 		
-		assertEquals(testString,in.calucate(testStack));
+		assertEquals(testString,in.calculate(testStack));
 		
 		testStack = math2plus;
 		testdouble = 6;
 		testString = Double.toString(testdouble);
 		
-		assertEquals(testString,in.calucate(testStack));
+		assertEquals(testString,in.calculate(testStack));
 		
 		
-		in = new Input();
+		in = new Input1();
 		testStack = math4minus2;
 		
 		testdouble = 2;
 		testString = Double.toString(testdouble);
 		
-		assertEquals(testString,in.calucate(testStack));
+		assertEquals(testString,in.calculate(testStack));
 		
 		testStack = math2minus;
 		testdouble = 0;
 		testString = Double.toString(testdouble);
 		
-		assertEquals(testString,in.calucate(testStack));
+		assertEquals(testString,in.calculate(testStack));
 		
 		
 		
 	}
 	
 	@Test
-	public void testCalucate3inputs(){
+	public void testcalculate3inputs(){
 		
 		
 		

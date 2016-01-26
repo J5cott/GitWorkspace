@@ -1,0 +1,49 @@
+package model;
+
+import java.util.*;
+
+public class Input1 {
+
+	private double num1;
+	private double num2;
+	private boolean add = false;
+	private boolean subtract = false;
+	private boolean var1parsed = false;
+
+	public String calculate(Stack<String> math) {
+		try {
+			int i = 0;
+			while (math.isEmpty() == false) {
+				String var1 = math.pop();
+				if (var1.matches("1|2|3|4|5|6|7|8|9|0")) {
+					if (var1parsed == false) {
+						num1 += (Double.valueOf(var1) * Math.pow(10, i));
+						i++;
+					} else {
+						num2 += (Double.valueOf(var1) * Math.pow(10, i));
+						i++;
+					}
+				} else {
+					i = 0;
+					var1parsed = true;
+					if (var1.matches("+")) {
+						add = true;
+					} else if (var1.matches("-")) {
+						subtract = true;
+					}
+				}
+				
+
+				
+			}
+		} catch (NumberFormatException ex) {
+			return "Syntax error";
+
+		}
+
+		catch (Exception ex) {
+			return ex.getMessage();
+
+		}
+	}
+}

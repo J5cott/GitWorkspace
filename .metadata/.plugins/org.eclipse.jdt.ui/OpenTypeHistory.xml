@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=Calculator/src&lt;model{Input.java[Input" modifiers="1" timestamp="1444587860752"/>
 <typeInfo handle="=Calculator/src&lt;model{BasicAlgebra.java[BasicAlgebra" modifiers="1" timestamp="1444587860746"/>
-<typeInfo handle="=Battleship/src&lt;{BshipProtocol.java[BshipProtocol[Game" modifiers="1" timestamp="1445109725884"/>
-<typeInfo handle="=Calculator/src&lt;model{View.java[View" modifiers="1" timestamp="1444609638123"/>
-<typeInfo handle="=Battleship/src&lt;{Player.java[Player" modifiers="1" timestamp="1445110624231"/>
-<typeInfo handle="=Battleship/src&lt;{BshipProtocol.java[BshipProtocol" modifiers="1" timestamp="1445109725884"/>
-<typeInfo handle="=Battleship/src&lt;{Bship.java[Bship[BoardListener" modifiers="2" timestamp="1445110624309"/>
-<typeInfo handle="=Battleship/src&lt;{Bship.java[Bship[StatsListener" modifiers="2" timestamp="1445110624309"/>
-<typeInfo handle="=Battleship/src&lt;{Bship.java[Bship" modifiers="1" timestamp="1445110624309"/>
-<typeInfo handle="=Battleship/src&lt;{Ship.java[Ship" modifiers="1" timestamp="1445109499523"/>
+<typeInfo handle="=Calculator/src&lt;model{View.java[View" modifiers="1" timestamp="1453788852161"/>
+<typeInfo handle="=Calculator/src&lt;model{Input1.java[Input1" modifiers="1" timestamp="1453788820970"/>
+<typeInfo handle="=Calculator/src&lt;model{InputTest.java[InputTest" modifiers="1" timestamp="1444587860755"/>
 </typeInfoHistroy>

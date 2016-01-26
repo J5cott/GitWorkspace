@@ -1,0 +1,106 @@
+package model;
+
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Input1 {
+
+	private double decimal;
+	private double num1;
+	private double num2;
+	private boolean add = false;
+	private boolean subtract = false;
+	private boolean var1parsed = false;
+	private boolean num1valid = false;
+	private boolean num2valid = false;
+	private boolean operatorvalid = false;
+	private boolean adddecimal = false;
+
+	public String calculate(Stack<String> math) {
+		Pattern p = Pattern.compile("\\.");
+		Pattern p1 = Pattern.compile("\\d|\\.");
+
+		try {
+			int i = 0;
+			while (math.isEmpty() == false) {
+				
+				String var1 = math.pop();
+				Matcher m1 = p.matcher(var1);
+				Matcher m2 = p1.matcher(var1);
+				boolean m1matches = m1.matches();
+				boolean m2matches = m2.matches();
+				
+				if (m2matches) {
+
+					if (m1matches) {
+						adddecimal = true;
+						i = 1;
+					}
+
+					if (var1parsed == false) {
+						num1valid = true;
+						if (adddecimal == false) {
+							num1 += (Double.valueOf(var1) * Math.pow(10, i));
+						} else {
+
+							num1 += (Double.valueOf(var1) / Math.pow(10, i));
+						}
+						i++;
+					} else {
+						num2valid = true;
+						if (adddecimal == false) {
+							num2 += (Double.valueOf(var1) * Math.pow(10, i));
+						} else {
+
+							num2 += (Double.valueOf(var1) / Math.pow(10, i));
+						}
+						i++;
+					}
+				} else {
+					i = 0;
+					var1parsed = true;
+					adddecimal = false;
+					if (var1.matches("+")) {
+						if (operatorvalid == false) {
+							operatorvalid = true;
+						} else {
+							operatorvalid = false;
+						}
+						add = true;
+					} else if (var1.matches("-")) {
+						if (operatorvalid == false) {
+							operatorvalid = true;
+						} else {
+							operatorvalid = false;
+						}
+						subtract = true;
+					}
+				}
+
+			}
+
+			double number = 0;
+			if (num1valid == true && num2valid == true && operatorvalid == true) {
+				if (subtract == true) {
+					number = BasicAlgebra.substract(num1, num2);
+				} else if (add == true) {
+					number = BasicAlgebra.add(num1, num2);
+				}
+			} else {
+				return "Invalid input";
+			}
+
+			return Double.toString(number);
+
+		} catch (NumberFormatException ex) {
+			return "Syntax error";
+
+		}
+
+		catch (Exception ex) {
+			return ex.getMessage();
+
+		}
+	}
+}
