@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -27,8 +28,12 @@ public class View extends JPanel{
 	private JEditorPane result;
 	
 	private Stack<String> input;
+	private Stack<String> tempstack;
+	
+	private String resultstring;
 	
 	private Input1 math;
+	
 	
 	/**
 	 * Construct a new View
@@ -37,7 +42,11 @@ public class View extends JPanel{
 		
 		math = new Input1();
 		
+		
+		resultstring = "";
 		input = new Stack<String>();
+		tempstack = new Stack<String>();
+		
 		
 		result = new JEditorPane();
 		result.setText("0");
@@ -78,52 +87,73 @@ public class View extends JPanel{
 				JButton b = (JButton) e.getSource();
 				if(b.equals(zero)){
 					input.push("0");
-					result.setText("0");
+					tempstack.push("0");
+					//result.setText("0");
 				} else if(b.equals(one)){
 					input.push("1");
-					result.setText("1");
+					tempstack.push("1");
+					//result.setText("1");
 				} else if(b.equals(two)){
 					input.push("2");
-					result.setText("2");
+					tempstack.push("2");
+					//result.setText("2");
 				} else if(b.equals(three)){
 					input.push("3");
-					result.setText("3");
+					tempstack.push("3");
+					//result.setText("3");
 				} else if (b.equals(four)){
 					input.push("4");
-					result.setText("4");
+					tempstack.push("4");
+					//result.setText("4");
 				} else if (b.equals(five)){
 					input.push("5");
-					result.setText("5");
+					tempstack.push("5");
+					//result.setText("5");
 				} else if (b.equals(six)){
 					input.push("6");
-					result.setText("6");
+					tempstack.push("6");
+					//result.setText("6");
 				} else if (b.equals(seven)){
 					input.push("7");
-					result.setText("7");
+					tempstack.push("7");
+					//result.setText("7");
 				} else if (b.equals(eight)){
 					input.push("8");
-					result.setText("8");
+					tempstack.push("8");
+					//result.setText("8");
 				} else if (b.equals(nine)){
 					input.push("9");
-					result.setText("9");
+					tempstack.push("9");
+					//result.setText("9");
 				} else if (b.equals(enter)){
-					result.setText(String.valueOf(math.calculate(input)));
+					resultstring = String.valueOf(math.calculate(input));
+					//result.setText(String.valueOf(math.calculate(input)));
 				} else if (b.equals(add)){
 					input.push("+");
+					resultstring = "";
 				} else if (b.equals(sub)){
 				input.push("-");
+				resultstring = "";
 				} else if (b.equals(clear)){
 					input.clear();
-					result.setText("0");
+					//result.setText("0");
+					resultstring = "0";
 				} else if (b.equals(allclear)){
 					input.clear();
 					math.clear();
-					result.setText("0");
+					resultstring = "0";
+					//result.setText("0");
 		}
 				else if (b.equals(".")){
 					input.push(".");
-					result.setText(".");
-				}}};
+					tempstack.push(".");
+					//result.setText(".");
+				}
+				if(tempstack.isEmpty() == false){
+				resultstring = resultstring.concat(String.valueOf(tempstack.pop()));
+				}
+				result.setText(resultstring);
+			}};
 		
 		zero.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
@@ -245,8 +275,9 @@ public class View extends JPanel{
 		});
 		
 		nine.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).
-        put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_PERIOD,0), "._pressed");
-		nine.getActionMap().put("._pressed", buttonPressed);
+        put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_9,0), "9_pressed");
+		nine.getActionMap().put("9_pressed", buttonPressed);
+		
 		
 		period.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
@@ -258,8 +289,8 @@ public class View extends JPanel{
 		
 		
 		period.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).
-        put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_0,0), "0_pressed");
-		zero.getActionMap().put("0_pressed", buttonPressed);
+        put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_PERIOD,0), "._pressed");
+		period.getActionMap().put("._pressed", buttonPressed);
 		
 		add = new JButton("+");
 		
@@ -271,7 +302,7 @@ public class View extends JPanel{
 		});
 		
 		add.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).
-        put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ADD,0), "plus");
+        put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_EQUALS,0), "+_pressed");
 		add.getActionMap().put("+_pressed", buttonPressed);
 		
 		sub = new JButton("-");
